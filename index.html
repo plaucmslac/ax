@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Həqiqi oyunçular üçün</title>
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '2704938816591826');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=2704938816591826&ev=PageView&noscript=1"/></noscript>
+<!-- End Meta Pixel Code -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --cream:#e4dac2;
+    --cream-bright:#f3ead1;
+    --gold-text:#d8b874;
+    --gold:rgba(216,184,116,0.75);
+    --gold-soft:rgba(216,184,116,0.3);
+    --btn1:#ead39a;
+    --btn2:#cba658;
+    --ink:#10211a;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    min-height:100vh;
+    font-family:"Inter",system-ui,sans-serif;
+    color:var(--cream);
+    background:
+      radial-gradient(1100px 620px at 50% 38%, rgba(201,162,92,0.11), transparent 60%),
+      radial-gradient(1000px 560px at 50% 116%, rgba(4,20,14,0.6), transparent 62%),
+      linear-gradient(180deg,#0f271d 0%,#0a1c14 50%,#06110b 100%);
+    background-attachment:fixed;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+    overflow-x:hidden;
+  }
+
+  /* vignette + grain for depth */
+  .vig{
+    position:fixed; inset:0; z-index:9; pointer-events:none;
+    background:radial-gradient(130% 120% at 50% 42%, transparent 52%, rgba(0,0,0,0.5) 100%);
+  }
+  .grain{
+    position:fixed; inset:0; z-index:10; pointer-events:none;
+    opacity:0.035; mix-blend-mode:overlay;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  .wrap{
+    position:relative; z-index:1;
+    width:100%; max-width:860px; margin:0 auto;
+    min-height:100vh; min-height:100svh;
+    padding:clamp(3rem,10vh,6rem) clamp(1.4rem,6vw,2rem);
+    display:flex; flex-direction:column;
+    align-items:center; justify-content:center;
+    text-align:center;
+  }
+
+  .kicker{
+    font-family:"Inter",sans-serif; font-weight:600;
+    font-size:clamp(0.72rem,1.9vw,0.88rem);
+    letter-spacing:0.46em; text-transform:uppercase;
+    color:var(--gold-text);
+    padding-left:0.46em;
+    margin-bottom:clamp(1.4rem,4vh,2.2rem);
+  }
+
+  .headline{
+    margin:0;
+    font-family:"Playfair Display",Georgia,serif;
+    font-weight:600;
+    font-size:clamp(2.6rem,8.4vw,5rem);
+    line-height:1.08; letter-spacing:0.004em;
+    color:var(--cream-bright);
+    max-width:14ch;
+  }
+
+  /* gold divider with diamond */
+  .divider{
+    display:flex; align-items:center; justify-content:center; gap:clamp(12px,3vw,18px);
+    width:min(340px,70vw);
+    margin:clamp(1.8rem,4.6vh,2.8rem) 0 clamp(2.8rem,8vh,4.4rem);
+  }
+  .divider .bar{ flex:1; height:1px;
+    background:linear-gradient(90deg,transparent,var(--gold-soft)); }
+  .divider .bar.r{ background:linear-gradient(90deg,var(--gold-soft),transparent); }
+  .divider .dot{
+    width:7px; height:7px; flex:none;
+    background:var(--gold); transform:rotate(45deg);
+    box-shadow:0 0 12px rgba(216,184,116,0.5);
+  }
+
+  /* CTA */
+  .cta{
+    position:relative; display:inline-block;
+    padding:clamp(1.05rem,2.5vw,1.3rem) clamp(3.1rem,9vw,4.6rem) clamp(1.05rem,2.5vw,1.3rem) calc(clamp(3.1rem,9vw,4.6rem) + 0.28em);
+    background:linear-gradient(180deg,var(--btn1),var(--btn2));
+    color:var(--ink); text-decoration:none;
+    font-family:"Inter",sans-serif; font-weight:600;
+    font-size:clamp(0.82rem,2vw,0.94rem);
+    letter-spacing:0.28em; text-transform:uppercase;
+    border-radius:2px;
+    box-shadow:0 10px 44px -12px rgba(216,184,116,0.45), 0 2px 8px rgba(0,0,0,0.45);
+    transition:transform .35s ease, box-shadow .35s ease, filter .35s ease;
+  }
+  .cta::before{
+    content:""; position:absolute; inset:-7px;
+    border:1px solid rgba(216,184,116,0.3); border-radius:4px;
+    transition:inset .35s ease, border-color .35s ease;
+  }
+  .cta:hover{
+    transform:translateY(-2px); filter:brightness(1.05);
+    box-shadow:0 18px 58px -10px rgba(222,190,122,0.6), 0 3px 10px rgba(0,0,0,0.5);
+  }
+  .cta:hover::before{ inset:-10px; border-color:rgba(222,190,122,0.55); }
+  .cta:active{ transform:translateY(0); }
+
+  @media (max-width:380px){
+    .kicker{ letter-spacing:0.36em; }
+    .cta{ letter-spacing:0.2em; }
+  }
+  @media (prefers-reduced-motion:reduce){
+    .cta,.cta::before{ transition:none; }
+  }
+</style>
+</head>
+<body>
+  <div class="vig"></div>
+  <div class="grain"></div>
+
+  <main class="wrap">
+    <span class="kicker">VIP Poker Klubu</span>
+
+    <h1 class="headline">Həqiqi oyunçular üçün</h1>
+
+    <div class="divider" aria-hidden="true">
+      <span class="bar"></span>
+      <span class="dot"></span>
+      <span class="bar r"></span>
+    </div>
+
+    <a class="cta"
+       href="https://t.me/+m-IwYm3Z2Tk2Nzc6"
+       rel="noopener"
+       onclick="if(typeof fbq!=='undefined'){fbq('track','Lead');}">
+      İndi Oyna
+    </a>
+  </main>
+</body>
+</html>
